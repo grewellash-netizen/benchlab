@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0c111b">
+<meta name="description" content="Free browser-based computer benchmark. Runs locally.">
+<title>BenchLab — Test your computer</title><link rel="stylesheet" href="style.css">
+<script src="benchmark.js" defer></script></head>
+<body><div class="shell">
+<header><a class="brand" href="./"><b>B</b> Bench<span>Lab</span></a><div class="nav"><i></i> Runs locally <a href="https://github.com/grewellash-netizen/benchlab" target="_blank" rel="noopener">GitHub ↗</a></div></header>
+<main>
+<section class="hero"><div><p class="eyebrow">BROWSER COMPUTER BENCHMARK</p><h1>How fast is<br><em>your computer?</em></h1>
+<p class="intro">Test CPU calculations, algorithms, memory, parallel workers and browser storage. Workloads run on your device. Your results stay yours unless you export them.</p>
+<div class="actions"><button id="runFull" class="primary">▶ Run full benchmark</button><button id="runQuick" class="secondary">Quick check</button></div>
+<p class="tiny">No account · No install · No server-side processing</p></div>
+<div class="art"><div class="chip"><strong>BL</strong><small>BENCHLAB</small></div><label>CPU <b>LOCAL</b></label><aside>RESULTS <b>YOURS</b></aside></div></section>
+<section class="panel"><div class="heading"><div><p class="eyebrow">DETECTED ENVIRONMENT</p><h2>Your browser setup</h2></div><span class="tag">Browser-reported info</span></div>
+<div class="system"><div><small>Browser</small><b id="browserName">Detecting…</b></div><div><small>Platform</small><b id="platformName">Detecting…</b></div><div><small>Logical CPU threads</small><b id="cpuThreads">—</b></div><div><small>Memory estimate</small><b id="deviceMemory">Not exposed</b></div></div>
+<p class="muted">Browsers hide some hardware details. Thread count and memory estimates may be unavailable or rounded; BenchLab does not guess your exact CPU or RAM model.</p></section>
+<section class="tests"><div class="heading"><div><p class="eyebrow">WHAT GETS TESTED</p><h2>Inside the benchmark</h2></div><span class="tag">28 workloads</span></div>
+<div class="cards">
+<article><b class="ico blue">⌁</b><h3>CPU & maths</h3><p>Integer and floating-point work, prime sieving, matrices and fractals.</p><small>6 tests</small></article>
+<article><b class="ico purple">⌘</b><h3>Algorithms</h3><p>Sorting, searching, graph traversal, shortest paths and edit distance.</p><small>8 tests</small></article>
+<article><b class="ico teal">{ }</b><h3>Data processing</h3><p>JSON, regex, SHA-256 and gzip compression.</p><small>5 tests</small></article>
+<article><b class="ico orange">▤</b><h3>Memory</h3><p>Typed-array copying, filling and random access.</p><small>3 tests</small></article>
+<article><b class="ico pink">⑂</b><h3>Parallel work</h3><p>Serial processing versus 1, 2 and 4 Web Workers.</p><small>4 tests</small></article>
+<article><b class="ico blue">▣</b><h3>Browser storage</h3><p>Temporary IndexedDB writes and reads.</p><small>2 tests</small></article>
+</div></section>
+<section id="progressPanel" class="panel progress" hidden><div class="heading"><div><p class="eyebrow">BENCHMARK IN PROGRESS</p><h2 id="progressTitle">Preparing…</h2></div><b id="progressCount">0 / 28</b></div><div class="track"><div id="progressBar"></div></div><p id="progressDetail" class="muted">Keep this tab open and avoid heavy activity.</p></section>
+<section id="resultsPanel" class="results" hidden><div class="heading"><div><p class="eyebrow">YOUR RESULTS</p><h2>Benchmark report</h2><p id="resultSummary" class="muted"></p></div><span class="status">Complete</span></div>
+<div id="scoreCards" class="scores"></div><div class="actions"><button id="downloadResults" class="primary">↓ Export results JSON</button><button id="saveBaseline" class="secondary">Set comparison baseline</button></div>
+<section class="panel"><div class="heading"><div><p class="eyebrow">DEVICE COMPARISON</p><h2>Compare computers</h2></div></div>
+<p class="muted">Export one computer's JSON, then import it on another. Both reports must use the same BenchLab version and mode.</p>
+<div class="actions"><label class="secondary upload">Import results JSON<input id="importResults" type="file" accept=".json,application/json"></label><button id="clearBaseline" class="linkbtn">Clear baseline</button></div>
+<p id="baselineStatus" class="muted">No comparison baseline loaded.</p><div id="comparisonTable" class="table-scroll" hidden></div></section>
+<section class="panel"><div class="heading"><div><p class="eyebrow">DETAILED TIMINGS</p><h2>Every test</h2></div><span class="tag" id="testResultCount"></span></div>
+<div class="table-scroll"><table><thead><tr><th>Test</th><th>Category</th><th>Median</th><th>Check</th></tr></thead><tbody id="resultsBody"></tbody></table></div></section>
+<p class="footnote">These are browser JavaScript measurements, not Python Suite 3.0 scores. Browser engine, power mode, background tasks, heat and browser APIs affect results. Typed-array operations are not physical DRAM bandwidth tests; IndexedDB is not a raw SSD benchmark; Web Worker timings include startup and messaging overhead.</p></section>
+<section class="notice"><b>i</b><div><strong>For a fair comparison</strong><p>Use the same browser where possible, plug laptops into power, close heavy applications, and let devices cool between runs. Quick and full modes are not comparable. Results are never uploaded automatically.</p></div></section>
+</main><footer><a class="brand" href="./"><b>B</b> Bench<span>Lab</span></a><span>Free · Open source · Runs in your browser</span><a href="https://github.com/grewellash-netizen/benchlab" target="_blank" rel="noopener">View source ↗</a></footer></div>
+<div id="toast" role="status"></div></body></html>
